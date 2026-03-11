@@ -1,0 +1,37 @@
+components:
+- components:
+  - components:
+    - name: repeating_panel_schueler
+      properties: {item_template: Schueler.RowTemplate3}
+      type: RepeatingPanel
+    event_bindings: {}
+    layout_properties: {grid_position: 'EUKYTG,MLDEWJ'}
+    name: data_grid_schueler
+    properties:
+      columns:
+      - {data_key: ID, id: JKSDUP, title: Schüler ID}
+      - {data_key: Name, id: VJQQOR, title: Name}
+      - {data_key: Geburtsdatum, id: OJLQEN, title: Geburtsdatum}
+      - {data_key: Internat_ID, id: YRHPKW, title: Internat ID}
+    type: DataGrid
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
+  name: label_1
+  properties: {text: Schüler Tabelle}
+  type: Label
+- components: []
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

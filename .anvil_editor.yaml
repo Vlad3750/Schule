@@ -3,9 +3,10 @@ unique_ids:
     standard-page.html: VB5R4JBTMHZFNN6D5LTMYR7M7LUOBPOV
     theme.css: ZEZ7RXJV6ISP3S4H2TGPZFHN4HCZ2Y2Q
   forms:
+    Diagramm: '1773226119542903604380983.2114'
+    Schueler: '1773223379855925833845100.574'
+    Schueler.RowTemplate3: '1773223878962370389195193.9946'
     Startseite: WPNH5LONCCRYYDEDDLN7YUNADDUXUL67
-    Startseite.RowTemplate1: '1772709992022121143655664.6418'
-    Startseite.RowTemplate2: '1772710122383337771339212.7131'
   modules: {}
   scripts: {}
   server_modules:
