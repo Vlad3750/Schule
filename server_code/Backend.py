@@ -27,4 +27,12 @@ def get_Schueler():
         SELECT * FROM Schueler
     """)
     return cur.fetchall()
-    
+
+@anvil.server.callable
+def get_Lehrer():
+  with sqlite3.connect(data_files['internatsDB.db']) as conn:
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT * FROM Lehrer
+    """)
+    return cur.fetchall()

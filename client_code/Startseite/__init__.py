@@ -29,13 +29,12 @@ class Startseite(StartseiteTemplate):
 #          color= 'rgb(255, 224, 113)'),
         name = 'Schüler'
       )
-      
     ]
 
     self.diagramm.layout = {
       'title': {'text': 'Diagramm'}
     }
-      
+    
     self.diagramm.layout.yaxis.title.text = 'Anzahl'
 
     
