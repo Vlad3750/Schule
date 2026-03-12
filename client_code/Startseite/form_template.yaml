@@ -16,13 +16,20 @@ components:
       Schulübersicht
   type: Label
 - components:
-  - layout_properties: {grid_position: 'CPHUYA,GNEPSR'}
+  - event_bindings: {}
+    layout_properties: {grid_position: 'ZHHGQF,ZMLNBT'}
     name: diagramm
     properties: {text: Diagramm}
     type: Link
-  - layout_properties: {grid_position: 'DDDCIP,VSCBKW'}
+  - event_bindings: {}
+    layout_properties: {grid_position: 'GTSXTI,GRYGSC'}
     name: schueler
-    properties: {align: left, text: Schüler}
+    properties: {text: Schueler}
+    type: Link
+  - event_bindings: {}
+    layout_properties: {grid_position: 'VKSENF,XQHTTD'}
+    name: lehrer
+    properties: {text: Lehrer}
     type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1
@@ -33,4 +40,8 @@ container:
   type: HtmlTemplate
 is_package: true
 layout_metadata: {title: Startseite}
-slots: {}
+slots:
+  slot_1:
+    index: 0
+    set_layout_properties: {grid_position: 'YAUYCL,KMHGCY'}
+    target: {name: content_panel, type: container}

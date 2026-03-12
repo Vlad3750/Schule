@@ -13,15 +13,19 @@ class Startseite(StartseiteTemplate):
 
     # Any code you write here will run before the form opens.
 
-  @handle("schueler", "click")
-  def btn_schueler_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Startseite.Schueler')
-
   @handle("diagramm", "click")
   def diagramm_click(self, **event_args):
     """This method is called when the link is clicked"""
-    open_form('Startseite.Diagramm')
+    open_form('Diagramm')
 
+  @handle("schueler", "click")
+  def schueler_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('Schueler')
 
-      
+  @handle("lehrer", "click")
+  def lehrer_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('Lehrer')
+
+    
