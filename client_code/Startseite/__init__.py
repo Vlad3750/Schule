@@ -28,4 +28,9 @@ class Startseite(StartseiteTemplate):
     """This method is called when the link is clicked"""
     open_form('Lehrer')
 
+  @handle("internat", "click")
+  def internat_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('Internat')
+
     

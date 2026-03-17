@@ -31,6 +31,11 @@ components:
     name: lehrer
     properties: {text: Lehrer}
     type: Link
+  - event_bindings: {}
+    layout_properties: {grid_position: 'JGMUGP,DFFTZA'}
+    name: internat
+    properties: {text: Internat}
+    type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties: {}
