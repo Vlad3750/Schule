@@ -18,7 +18,7 @@ components:
 - components:
   - event_bindings: {}
     layout_properties: {grid_position: 'KDJZYY,DHKOFU'}
-    name: Startseite
+    name: startseite
     properties: {text: Startseite}
     type: Link
   - event_bindings: {}

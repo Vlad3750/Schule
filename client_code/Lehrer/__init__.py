@@ -11,6 +11,8 @@ class Lehrer(LehrerTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    self.layout.reset()
+    self.layout.lehrer.role = 'selected'
     # Any code you write here will run before the form opens.
 
   @handle("data_grid_lehrer", "show")

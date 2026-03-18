@@ -11,6 +11,8 @@ class Unterricht(UnterrichtTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    self.layout.reset()
+    self.layout.unterricht.role = 'selected'
     # Any code you write here will run before the form opens.
 
   @handle("repeating_panel_unterricht", "show")

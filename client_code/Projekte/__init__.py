@@ -11,6 +11,8 @@ class Projekte(ProjekteTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    self.layout.reset()
+    self.layout.projekte.role = 'selected'
     # Any code you write here will run before the form opens.
 
   @handle("link_1", "show")

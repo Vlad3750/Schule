@@ -15,7 +15,12 @@ class AAA_Layout(AAA_LayoutTemplate):
 
   def reset(self):
     self.diagramm.role = ""
-    self.schueler.rol
+    self.schueler.role = ""
+    self.lehrer.role = ""
+    self.projekte.role = ""
+    self.internat.role = ""
+    self.unterricht.role = ""
+    self.startseite.role = ""
   
   @handle("diagramm", "click")
   def diagramm_click(self, **event_args):
@@ -47,8 +52,8 @@ class AAA_Layout(AAA_LayoutTemplate):
     """This method is called when the link is clicked"""
     open_form('Unterricht')
 
-  @handle("Startseite", "click")
-  def Startseite_click(self, **event_args):
+  @handle("startseite", "click")
+  def startseite_click(self, **event_args):
     """This method is called when the link is clicked"""
     open_form('Startseite')
 
