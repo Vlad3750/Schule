@@ -1,0 +1,18 @@
+components_by_slot:
+  slot_1:
+  - components:
+    - event_bindings: {}
+      name: repeating_panel_unterricht
+      properties: {item_template: Unterricht.RowTemplate6}
+      type: RepeatingPanel
+    layout_properties: {}
+    name: data_grid_1
+    properties:
+      columns:
+      - {data_key: Schueler, id: JKSDUP, title: Schüler}
+      - {data_key: Fach, id: VJQQOR, title: Fach}
+      - {data_key: Lehrer, id: OJLQEN, title: Lehrer}
+      - {data_key: Spezialisierung, id: NGYLTE, title: Spezialisierung}
+    type: DataGrid
+is_package: true
+layout: {type: 'form:AAA_Layout'}

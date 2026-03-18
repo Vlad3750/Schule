@@ -14,4 +14,4 @@ components_by_slot:
       - {data_key: Anzahl, id: OJLQEN, title: Anzahl von Schüler}
     type: DataGrid
 is_package: true
-layout: {type: 'form:Startseite'}
+layout: {type: 'form:AAA_Layout'}

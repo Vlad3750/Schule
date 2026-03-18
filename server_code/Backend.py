@@ -120,3 +120,22 @@ def get_Projekte():
         LEFT JOIN Lehrer l   ON l.ID = p.Betreuer_ID
     """).fetchall()
     return [dict(row) for row in result]
+
+@anvil.server.callable
+def get_Unterricht():
+  with sqlite3.connect(data_files['internatsDB.db']) as conn:
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    result = cur.execute("""
+        SELECT
+          s.Name        AS Schueler,
+          u.Fach        AS Fach,
+          l.Name        AS Lehrer,
+          l.Spezialisierung
+        FROM Unterricht u
+        JOIN Schueler s  ON s.ID = u.Schueler_ID
+        JOIN Lehrer l    ON l.ID = u.Lehrer_ID
+        JOIN Internat i  ON i.ID = s.Internat_ID
+        ORDER BY s.Name, u.Fach	
+    """).fetchall()
+    return [dict(row) for row in result]

@@ -15,4 +15,4 @@ components_by_slot:
       - {data_key: Lehrer, id: HNNYNH, title: Lehrer}
     type: DataGrid
 is_package: true
-layout: {type: 'form:Startseite'}
+layout: {type: 'form:AAA_Layout'}

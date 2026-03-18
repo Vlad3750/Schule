@@ -12,7 +12,9 @@ class Diagramm(DiagrammTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     Plot.templates.default = "material_light"
-
+s
+    self.layout.reset()
+    self.layout.diagramm.role = 'selected'
     # Any code you write here will run before the form opens.
 
     SchuelerAnzahl = anvil.server.call('get_SchuelerAnzahl_Diagramm')
@@ -29,19 +31,23 @@ class Diagramm(DiagrammTemplate):
     self.diagramm.data = [
       go.Bar(
         x = ['Schüler'],
-        y = y_wertSchueler
+        y = y_wertSchueler,
+        name = ''
       ),
       go.Bar(
         x = ['Lehrer'],
-        y = y_wertLehrer
+        y = y_wertLehrer,
+        name = ''
       ),
       go.Bar(
         x = ['Projekte'],
-        y = y_wertProjekte
+        y = y_wertProjekte,
+        name = ''
       ),
       go.Bar(
-        x = ['Unterrichts Einheiten'],
-        y = y_wertUnterricht
+        x = ['Unterrichtseinheiten'],
+        y = y_wertUnterricht,
+        name = ''
       )
     ]
 

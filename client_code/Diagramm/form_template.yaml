@@ -5,4 +5,4 @@ components_by_slot:
     properties: {}
     type: Plot
 is_package: true
-layout: {type: 'form:Startseite'}
+layout: {type: 'form:AAA_Layout'}

@@ -14,4 +14,4 @@ components_by_slot:
       - {data_key: Spezialisierung, id: OJLQEN, title: Spezialisierung}
     type: DataGrid
 is_package: true
-layout: {type: 'form:Startseite'}
+layout: {type: 'form:AAA_Layout'}
