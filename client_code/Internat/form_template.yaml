@@ -11,7 +11,7 @@ components_by_slot:
       columns:
       - {data_key: Name, id: JKSDUP, title: Name}
       - {data_key: Gruendungsjahr, id: VJQQOR, title: Gründungsjahr}
-      - {data_key: Anzahl, id: OJLQEN, title: Anzahl}
+      - {data_key: Anzahl, id: OJLQEN, title: Anzahl von Schüler}
     type: DataGrid
 is_package: true
 layout: {type: 'form:Startseite'}

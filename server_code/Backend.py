@@ -20,12 +20,34 @@ import sqlite3
 #
 
 @anvil.server.callable
+def get_Schueler_Diagramm():
+  with sqlite3.connect(data_files['internatsDB.db']) as conn:
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    result = cur.execute("""
+      SELECT
+        Name,
+        COUNT(ID)
+        FROM Schueler
+    """).fetchall()
+    return [dict(row) for row in result]
+
+
+@anvil.server.callable
 def get_Schueler():
   with sqlite3.connect(data_files['internatsDB.db']) as conn:
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     result = cur.execute("""
-        SELECT * FROM Schueler
+        SELECT 
+          s.Name,
+          s.Geburtsdatum,
+          s.Internat_ID,
+          GROUP_CONCAT(l.Name, ', ') AS Lehrer
+          FROM Schueler s
+          LEFT JOIN Unterricht u ON u.Schueler_ID = s.ID
+          LEFT JOIN Lehrer l     ON l.ID = u.Lehrer_ID
+          GROUP BY s.ID
     """).fetchall()
     return [dict(row) for row in result]
 

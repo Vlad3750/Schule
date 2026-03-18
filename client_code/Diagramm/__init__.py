@@ -15,6 +15,8 @@ class Diagramm(DiagrammTemplate):
 
     # Any code you write here will run before the form opens.
 
+    
+    
     # Plot some data
     self.diagramm.data = [
       go.Bar(

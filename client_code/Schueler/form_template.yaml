@@ -9,10 +9,10 @@ components_by_slot:
     name: data_grid_schueler
     properties:
       columns:
-      - {data_key: ID, id: JKSDUP, title: ID}
       - {data_key: Name, id: VJQQOR, title: Name}
       - {data_key: Geburtsdatum, id: OJLQEN, title: Geburtsdatum}
       - {data_key: Internat_ID, id: DBETOG, title: Internat_ID}
+      - {data_key: Lehrer, id: HNNYNH, title: Lehrer}
     type: DataGrid
 is_package: true
 layout: {type: 'form:Startseite'}
