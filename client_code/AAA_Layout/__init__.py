@@ -15,6 +15,7 @@ class AAA_Layout(AAA_LayoutTemplate):
 
   def reset(self):
     self.diagramm.role = ""
+    self.schueler.rol
   
   @handle("diagramm", "click")
   def diagramm_click(self, **event_args):

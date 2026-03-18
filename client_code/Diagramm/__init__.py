@@ -12,7 +12,7 @@ class Diagramm(DiagrammTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     Plot.templates.default = "material_light"
-s
+
     self.layout.reset()
     self.layout.diagramm.role = 'selected'
     # Any code you write here will run before the form opens.
