@@ -30,6 +30,7 @@ def get_SchuelerAnzahl_Diagramm():
   """).fetchall()
   return value
 
+@anvil.server.callable
 def get_LehrerAnzahl_Diagramm():
   conn = sqlite3.connect(data_files["internatsDB.db"])
   cur = conn.cursor()
@@ -37,6 +38,28 @@ def get_LehrerAnzahl_Diagramm():
     SELECT
       COUNT(ID) as Anzahl
     FROM Lehrer
+  """).fetchall()
+  return value
+
+@anvil.server.callable
+def get_ProjekteAnzahl_Diagramm():
+  conn = sqlite3.connect(data_files["internatsDB.db"])
+  cur = conn.cursor()
+  value = cur.execute("""
+    SELECT
+      COUNT(ID) as Anzahl
+    FROM Projekte
+  """).fetchall()
+  return value
+
+@anvil.server.callable
+def get_UnterrichtAnzahl_Diagramm():
+  conn = sqlite3.connect(data_files["internatsDB.db"])
+  cur = conn.cursor()
+  value = cur.execute("""
+    SELECT
+      COUNT(ID) as Anzahl
+    FROM Unterricht
   """).fetchall()
   return value
 
@@ -51,10 +74,10 @@ def get_Schueler():
           s.Geburtsdatum,
           s.Internat_ID,
           GROUP_CONCAT(l.Name, ', ') AS Lehrer
-          FROM Schueler s
-          LEFT JOIN Unterricht u ON u.Schueler_ID = s.ID
-          LEFT JOIN Lehrer l     ON l.ID = u.Lehrer_ID
-          GROUP BY s.ID
+        FROM Schueler s
+        LEFT JOIN (SELECT DISTINCT Schueler_ID, Lehrer_ID FROM Unterricht) u ON u.Schueler_ID = s.ID
+        LEFT JOIN Lehrer l ON l.ID = u.Lehrer_ID
+        GROUP BY s.ID
     """).fetchall()
     return [dict(row) for row in result]
 
@@ -81,3 +104,12 @@ def get_Internat():
     """).fetchall()
     return [dict(row) for row in result]
 
+@anvil.server.callable
+def get_Projekte():
+  with sqlite3.connect(data_files['internatsDB.db']) as conn:
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    result = cur.execute("""
+        
+    """).fetchall()
+    return [dict(row) for row in result]

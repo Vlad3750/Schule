@@ -16,10 +16,14 @@ class Diagramm(DiagrammTemplate):
     # Any code you write here will run before the form opens.
 
     SchuelerAnzahl = anvil.server.call('get_SchuelerAnzahl_Diagramm')
-    LehrerAnzahl = anvil.server.call('get_SchuelerAnzahl_Diagramm')
-
+    LehrerAnzahl = anvil.server.call('get_LehrerAnzahl_Diagramm')
+    ProjekteAnzahl = anvil.server.call('get_ProjekteAnzahl_Diagramm')
+    UnterrichtAnzahl = anvil.server.call('get_UnterrichtAnzahl_Diagramm')
+    
     y_wertSchueler = [row[0] for row in SchuelerAnzahl]
     y_wertLehrer = [row[0] for row in LehrerAnzahl]
+    y_wertProjekte = [row[0] for row in ProjekteAnzahl]
+    y_wertUnterricht = [row[0] for row in UnterrichtAnzahl]
     
     # Plot some data
     self.diagramm.data = [
@@ -30,11 +34,20 @@ class Diagramm(DiagrammTemplate):
       go.Bar(
         x = ['Lehrer'],
         y = y_wertLehrer
+      ),
+      go.Bar(
+        x = ['Projekte'],
+        y = y_wertProjekte
+      ),
+      go.Bar(
+        x = ['Unterrichts Einheiten'],
+        y = y_wertUnterricht
       )
     ]
 
     self.diagramm.layout = {
-      'title': {'text': 'Diagramm'}
+      'title': {'text': 'Diagramm'},
+      'showlegend': False
     }
 
     self.diagramm.layout.yaxis.title.text = 'Anzahl'
