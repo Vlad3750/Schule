@@ -21,8 +21,6 @@ class PieChart(PieChartTemplate):
     
     AnzahlSchueler = [row[0] for row in SchuelerAnzahl]
     AnzahlLehrer = [row[0] for row in LehrerAnzahl]
-
-    print(AnzahlSchueler, AnzahlLehrer)
     
     self.pieChart.data = [
       go.Pie(
@@ -30,11 +28,13 @@ class PieChart(PieChartTemplate):
         values=[AnzahlSchueler[0], AnzahlLehrer[0]]
       )
     ]
+    
     self.pieChart.layout = {
-      'title': {'text': 'Diagramm'},
+      'title': {'text': 'Kreisdiagramm'},
       'showlegend': False,
       'hovermode': 'closest',
     }
+    self.pieChart.config = {'displayModeBar': False}
 
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
