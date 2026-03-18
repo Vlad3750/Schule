@@ -2,7 +2,7 @@ components_by_slot:
   slot_1:
   - layout_properties: {}
     name: youtube_video_1
-    properties: {height: 406.171875, youtube_id: 'https://youtu.be/F5N01P-PNts?is=4O5MMxK_7itIsgly'}
+    properties: {height: 476.73046875, youtube_id: 'https://youtu.be/F5N01P-PNts?is=4O5MMxK_7itIsgly'}
     type: YouTubeVideo
 is_package: true
 layout: {type: 'form:AAA_Layout'}

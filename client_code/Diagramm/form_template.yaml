@@ -7,7 +7,7 @@ components_by_slot:
   - event_bindings: {}
     layout_properties: {}
     name: button_1
-    properties: {align: center, bold: false, enabled: true, text: Schüler zu Lehrer verhältniss, visible: true}
+    properties: {align: center, bold: false, enabled: true, text: Schüler zu Lehrer Verhältnis, visible: true}
     type: Button
 is_package: true
 layout: {type: 'form:AAA_Layout'}

@@ -28,20 +28,9 @@ class PieChart(PieChartTemplate):
         values=[AnzahlSchueler[0], AnzahlLehrer[0]]
       )
     ]
-    
-    self.pieChart.layout = {
-      'title': {'text': 'Kreisdiagramm'},
-      'showlegend': False,
-      'hovermode': 'closest',
-    }
-    self.pieChart.config = {'displayModeBar': False}
 
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('Diagramm')
 
-  @handle("pieChart", "click")
-  def pieChart_click(self, points, **event_args):
-    """This method is called when a data point is clicked."""
-    pass
