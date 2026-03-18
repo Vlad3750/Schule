@@ -20,18 +20,25 @@ import sqlite3
 #
 
 @anvil.server.callable
-def get_Schueler_Diagramm():
-  with sqlite3.connect(data_files['internatsDB.db']) as conn:
-    conn.row_factory = sqlite3.Row
-    cur = conn.cursor()
-    result = cur.execute("""
-      SELECT
-        Name,
-        COUNT(ID)
-        FROM Schueler
-    """).fetchall()
-    return [dict(row) for row in result]
+def get_SchuelerAnzahl_Diagramm():
+  conn = sqlite3.connect(data_files["internatsDB.db"])
+  cur = conn.cursor()
+  value = cur.execute("""
+    SELECT
+      COUNT(ID) as Anzahl
+    FROM Schueler
+  """).fetchall()
+  return value
 
+def get_LehrerAnzahl_Diagramm():
+  conn = sqlite3.connect(data_files["internatsDB.db"])
+  cur = conn.cursor()
+  value = cur.execute("""
+    SELECT
+      COUNT(ID) as Anzahl
+    FROM Lehrer
+  """).fetchall()
+  return value
 
 @anvil.server.callable
 def get_Schueler():

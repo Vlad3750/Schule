@@ -15,23 +15,21 @@ class Diagramm(DiagrammTemplate):
 
     # Any code you write here will run before the form opens.
 
-    
+    SchuelerAnzahl = anvil.server.call('get_SchuelerAnzahl_Diagramm')
+    LehrerAnzahl = anvil.server.call('get_SchuelerAnzahl_Diagramm')
+
+    y_wertSchueler = [row[0] for row in SchuelerAnzahl]
+    y_wertLehrer = [row[0] for row in LehrerAnzahl]
     
     # Plot some data
     self.diagramm.data = [
       go.Bar(
-        x = [2],
-        y = [5],
-        #        marker = dict(
-        #          color= 'rgb(212, 179, 60)'),
-        name = 'Lehrer'
+        x = ['Schüler'],
+        y = y_wertSchueler
       ),
       go.Bar(
-        x = [1],
-        y = [3],
-        #        marker = dict(
-        #          color= 'rgb(255, 224, 113)'),
-        name = 'Schüler'
+        x = ['Lehrer'],
+        y = y_wertLehrer
       )
     ]
 
