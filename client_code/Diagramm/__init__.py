@@ -15,6 +15,9 @@ class Diagramm(DiagrammTemplate):
 
     self.layout.reset()
     self.layout.diagramm.role = 'selected'
+
+    self.button_1.background = app.theme_colors['Primary Container']
+    
     # Any code you write here will run before the form opens.
 
     SchuelerAnzahl = anvil.server.call('get_SchuelerAnzahl_Diagramm')
@@ -57,3 +60,10 @@ class Diagramm(DiagrammTemplate):
     }
 
     self.diagramm.layout.yaxis.title.text = 'Anzahl'
+
+  @handle("button_1", "click")
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PieChart')
+
+    

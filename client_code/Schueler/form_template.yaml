@@ -11,7 +11,7 @@ components_by_slot:
       columns:
       - {data_key: Name, id: VJQQOR, title: Name}
       - {data_key: Geburtsdatum, id: OJLQEN, title: Geburtsdatum}
-      - {data_key: Internat_ID, id: DBETOG, title: Internat_ID}
+      - {data_key: Internat, id: DBETOG, title: Internat}
       - {data_key: Lehrer, id: HNNYNH, title: Lehrer}
     type: DataGrid
 is_package: true

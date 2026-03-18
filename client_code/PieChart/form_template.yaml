@@ -1,13 +1,14 @@
 components_by_slot:
   slot_1:
-  - layout_properties: {}
-    name: diagramm
+  - event_bindings: {}
+    layout_properties: {}
+    name: pieChart
     properties: {}
     type: Plot
   - event_bindings: {}
     layout_properties: {}
     name: button_1
-    properties: {align: center, bold: false, enabled: true, text: Schüler zu Lehrer verhältniss, visible: true}
+    properties: {text: <- Zurück}
     type: Button
 is_package: true
 layout: {type: 'form:AAA_Layout'}

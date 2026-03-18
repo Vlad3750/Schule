@@ -72,9 +72,10 @@ def get_Schueler():
         SELECT 
           s.Name,
           s.Geburtsdatum,
-          s.Internat_ID,
+          i.Name AS Internat,
           GROUP_CONCAT(l.Name, ', ') AS Lehrer
         FROM Schueler s
+        LEFT JOIN Internat i ON i.ID = s.Internat_ID
         LEFT JOIN (SELECT DISTINCT Schueler_ID, Lehrer_ID FROM Unterricht) u ON u.Schueler_ID = s.ID
         LEFT JOIN Lehrer l ON l.ID = u.Lehrer_ID
         GROUP BY s.ID
