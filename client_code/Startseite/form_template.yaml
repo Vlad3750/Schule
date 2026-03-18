@@ -36,6 +36,11 @@ components:
     name: internat
     properties: {text: Internat}
     type: Link
+  - event_bindings: {}
+    layout_properties: {grid_position: 'EPWSMN,FWXDUV'}
+    name: projekte
+    properties: {text: Projekte}
+    type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties: {}

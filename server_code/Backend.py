@@ -110,6 +110,13 @@ def get_Projekte():
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     result = cur.execute("""
-        
+        SELECT
+          p.Name        AS Projekt,
+          i.Name        AS Internat,
+          l.Name        AS Betreuer,
+          l.Spezialisierung
+        FROM Projekte p
+        LEFT JOIN Internat i ON i.ID = p.Internat_ID
+        LEFT JOIN Lehrer l   ON l.ID = p.Betreuer_ID
     """).fetchall()
     return [dict(row) for row in result]

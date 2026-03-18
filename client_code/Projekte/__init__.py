@@ -12,3 +12,9 @@ class Projekte(ProjekteTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  @handle("link_1", "show")
+  def link_1_show(self, **event_args):
+    """This method is called when the Link is shown on the screen"""
+    return_value = anvil.server.call('get_Projekte')
+    self.repeating_panel_projekte.items = return_value
